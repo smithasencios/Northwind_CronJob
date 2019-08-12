@@ -13,4 +13,12 @@ spec:
           - name: northwin-cronjob-container
             image: "northwin-cronjob-image"
             command: ["/run/monitor.sh"]
-          
+            env:
+              - name: DATABASE_HOST
+                value: api-db-mariadb.mariadb 
+              - name: NORTHWIND_DB_DATABASE
+                value: "northwind"
+              - name: NORTHWIND_DB_USER
+                value: root
+              - name: NORTHWIND_DB_PASSWORD
+                value: lfda
