@@ -28,6 +28,8 @@ try:
         print ("order_id = %s,order_date = %s,status_id = %d,shipped_date = %s" % \
             (order_id, order_date,status_id,shipped_date))
 
+        cursor.execute("UPDATE orders SET status_id = 3 WHERE id = %s",order_id)
+        db.commit()
     # disconnect from server
     db.close()
 
